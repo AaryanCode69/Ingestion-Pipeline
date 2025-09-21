@@ -55,6 +55,13 @@ class ForwardResponse(BaseModel):
     status: str = Field(..., description="Status of the forwarding operation")
     forward_response_status: int = Field(..., description="HTTP status code from Member B")
     forward_response_body: Union[Dict[str, Any], str] = Field(..., description="Response body from Member B")
+    member_b_response: Optional[Union[Dict[str, Any], str]] = Field(None, description="Alias for forward_response_body for backward compatibility")
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        # Set member_b_response as alias for forward_response_body if not provided
+        if self.member_b_response is None:
+            self.member_b_response = self.forward_response_body
     
     class Config:
         schema_extra = {
