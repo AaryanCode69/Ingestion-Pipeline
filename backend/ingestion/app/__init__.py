@@ -1,0 +1,4 @@
+"""
+Package initialization for the ingestion app.
+"""
+__version__ = "1.0.0"

@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
     
     # Member B forwarding settings
-    member_b_url: str = "http://localhost:9000/raw_events"
+    member_b_url: str = "https://35a161c372d1.ngrok-free.app/events"
     max_forward_retries: int = 3
     forward_retry_backoff: float = 1.0  # Base for exponential backoff
     

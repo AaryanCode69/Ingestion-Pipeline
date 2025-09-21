@@ -7,8 +7,8 @@ from typing import Dict, Any, Union, Tuple
 import httpx
 from loguru import logger
 
-from .schemas import EventIn, ForwardResponse, ErrorResponse
-from .config import get_settings
+from schemas import EventIn, ForwardResponse, ErrorResponse
+from config import get_settings
 
 settings = get_settings()
 

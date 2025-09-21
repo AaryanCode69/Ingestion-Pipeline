@@ -10,13 +10,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 import sys
 
-from .config import get_settings
-from .schemas import (
+from config import get_settings
+from schemas import (
     EventIn, ForwardResponse, SimulationRequest, 
     SimulationResponse, HealthResponse, ErrorResponse
 )
-from .ingestion import forward_event_to_member_b, check_member_b_health, cleanup_forwarding_service
-from .simulator import EventSimulator
+from ingestion import forward_event_to_member_b, check_member_b_health, cleanup_forwarding_service
+from simulator import EventSimulator
 
 # Configure logging
 logger.remove()
